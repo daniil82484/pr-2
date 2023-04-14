@@ -17,6 +17,4 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
     companion object {
         const val TAG = "ModalBottomSheet"
     }
-
-
 }
