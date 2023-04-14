@@ -38,28 +38,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:onClick="modalBottomSheet"
         android:text="Нажми, чтобы узнать больше"
         android:textAllCaps="false"
+        android:fontFamily="@font/changa_bold"
+        android:background="@drawable/input"
         android:textColor="@color/blue"
+        android:paddingHorizontal="12dp"
         android:textSize="20sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <include
-        layout="@layout/bottom_sheet"
-        android:layout_width="0dp"
-        android:layout_height="450dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
