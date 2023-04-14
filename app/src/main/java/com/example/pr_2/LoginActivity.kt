@@ -14,35 +14,19 @@ import java.util.regex.Pattern
 class LoginActivity : AppCompatActivity() {
     lateinit var email: EditText
     lateinit var password: EditText
+    lateinit var spinner:Spinner
     lateinit var btn:Button
 
-
-    val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
+    val pattern = ("[a-zA-Z0-9]{1,100}"+"@"+"[a-z]{1,10}"+"\\."+"[a-z]{1,4}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // элемент Spinner
-        val spinner = findViewById<Spinner>(R.id.spinner)
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
+        spinner = findViewById(R.id.spinner)
         btn = findViewById(R.id.btn)
-
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>, view: View?, pos: Int,
-                id: Long
-            ) {
-                (parent.getChildAt(0) as TextView).setTextColor(Color.WHITE)
-                //(parent.getChildAt(0) as TextView).textSize = 15f
-
-            }
-
-            override fun onNothingSelected(arg0: AdapterView<*>?) {}
-        }
-
 
         email.addTextChangedListener {
             editContent()
@@ -50,10 +34,11 @@ class LoginActivity : AppCompatActivity() {
         password.addTextChangedListener {
             editContent()
         }
+
     }
 
     private fun editContent(){
-        if (email.text.toString().isNotEmpty() && password.text.toString().isNotEmpty())
+        if (email.text.toString().isNotEmpty() || password.text.toString().isNotEmpty())
         {
             btn.setBackgroundResource(R.color.blue)
             btn.isClickable = true
@@ -70,17 +55,22 @@ class LoginActivity : AppCompatActivity() {
         return Pattern.compile(pattern).matcher(text).matches()
     }
     fun login(view: View) {
-        if (emailValid(email.text.toString()))
-        {
-            Toast.makeText(this, "Вход", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,MainPageActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        else
-        {
-            Toast.makeText(this, "Поле E-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
+        if (email.text.toString().isNotEmpty()) {
+            if (password.text.toString().isNotEmpty()) {
+                if (emailValid(email.text.toString())) {
+                    val intent = Intent(this, MainPageActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "Поле e-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
+                }
+            } else{
+                Toast.makeText(this, "Поле password пустое", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "Поле e-mail пустое", Toast.LENGTH_SHORT).show()
         }
     }
 }
+
 
