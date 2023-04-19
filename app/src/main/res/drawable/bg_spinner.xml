@@ -5,12 +5,12 @@
             <item>
                 <shape android:shape="rectangle">
                     <stroke android:color="@color/white" android:width="2dp"/>
-                    <solid android:color="#00000000"/>
                     <padding android:right="16dp" android:left="16dp"/>
+                    <corners android:radius="5dp"/>
+                    <solid android:color="@color/black_bg"/>
                 </shape>
             </item>
-
-            <item android:drawable="@drawable/arrow" android:gravity="end|center" android:width="48dp" android:height="48dp"/>
+            <item android:drawable="@drawable/arrow" android:gravity="end|center" android:width="36dp" android:height="48dp"/>
         </layer-list>
     </item>
 </selector>

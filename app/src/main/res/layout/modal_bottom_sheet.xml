@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/roboto"
         android:lineHeight="28sp"
         android:text="Mолодой язык родом из Питера, который вовсю теснит Java в мобильной и бэкенд-разработке. Kotlin — это язык программирования, созданный в компании JetBrains. Его разработали в 2011 году на замену Java, который в компании считали чересчур многословным. Новый язык получился на 40% компактнее предшественника, что помогло ускорить работу над основным продуктом JetBrains — средой разработки IntelliJ IDEA. При этом Kotlin полностью совместим с Java, потому что запускается на его виртуальной машине (JVM)."
         android:justificationMode="inter_word"
@@ -52,8 +52,8 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imageButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:background="@drawable/btn_c"
             android:onClick="close"
             android:src="@drawable/close"

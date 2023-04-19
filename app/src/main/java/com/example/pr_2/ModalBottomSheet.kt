@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+// BottomSheetDialogFragment() используется для создания модального нижнего листа
 class ModalBottomSheet : BottomSheetDialogFragment() {
 
     override fun onCreateView(
@@ -15,6 +16,7 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
     ): View? = inflater.inflate(R.layout.modal_bottom_sheet, container, false)
 
     companion object {
+        // используются для идентификации фрагмента
         const val TAG = "ModalBottomSheet"
     }
 }
