@@ -1,5 +1,4 @@
 package com.example.pr_2
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -9,27 +8,20 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import java.util.regex.Pattern
-
-
 class LoginActivity : AppCompatActivity() {
-
     // переменные будет инициализированы позже
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var btn:Button
-
     // паттерн для почты
     val pattern = ("[a-zA-Z0-9]{1,100}"+"@"+"[a-z]{1,10}"+"\\."+"[a-z]{1,4}")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         // инициализация
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
         btn = findViewById(R.id.btn)
-
         // вызываться при изменении текста в EditText
         email.addTextChangedListener {
             editContent()
